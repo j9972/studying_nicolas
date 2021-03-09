@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import "./Movie.css";
 
 // 인자를 { } 로 감싸지 않으면 화면에 표시가 안됨
-function Movie({ year, title, summary, poster, genres}) {
+function Movie({id, year, title, summary, poster, genres}) {
     return (
         <Link to={{
-            pathname:"/movie-detail",
+            pathname:`/movie/${id}`,
             state: {
                 year,
                 title,

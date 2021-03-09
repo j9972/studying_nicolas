@@ -9,9 +9,9 @@ class Detail extends React.Component {
         }
     }
     render() { // 이게 먼저 시작하고 그다음에 componentDidMount시작
-        const { location } = this.state;
+        const { location } = this.props;
         if(location.state) {
-            return <span>{location.sta.title}</span>
+            return <span>{location.state.title} {location.state.year}</span>
         } else {
             return null;
         }
