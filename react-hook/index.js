@@ -1,47 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-// import "./style.css";
-
-const content = [
-    {
-        tab: "Section 1",
-        content: "Im the content of the Section 1"
-    },
-    {
-        tab: "Section 2",
-        content: "Im the content of the Section 2"
-    }
-]
-
-const useTabs = (initialTab, allTabs) => {
-    //에러 확인용 -> 아래 if문은 array가 아닐때 return을 햐준다.
-    if(!allTabs || Array.isArray(allTabs)) {
-        return;
-    }
-    const [currentIndex, setCurrentIndex] = useState(initialTab);
-    return {
-        currentItem: allTabs[currentIndex],
-        changeItem: setCurrentIndex
-    };
-}
+import "./style.css";
 
 const App = () => {
     // const [item, setItem] = useState(0);
     // const IncrementItem = () => setItem(item + 1);
     // const DecrementItem = () => setItem(item - 1);
-    const {currentItem} = useTabs(0, content);
+    const sayHello = () => console.log("hello");
+    const [number, setNumber] = useState(0);
+    const [aNumber, setAnumber] = useState(0);
+    useEffect(sayHello, [number]);
     return (
         <div className="App">
             {/* 위 코드는 <h1>Hello</h1> {item} 이 원래 코드 */}
             {/* <button onClick={IncrementItem}>Increment</button>
             <button onClick={DecrementItem}>Decrement</button> */}
-            {content.map((section, index) => (
-                <button onClick={() => changeItem(index)}>{section.tab}</button>
-            ))}
-            <div>
-            {currentItem.content}
-            </div>
+            <div>Hi</div>
+            <button onClick={() => setNumber(number + 1)}></button>
+            <button onClick={() => setAnumber(aNumber + 1)}></button>
         </div>
     );
 };
