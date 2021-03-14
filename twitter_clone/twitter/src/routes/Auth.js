@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Auth = () => {
-    const [email, setEmail] = useState();
+    const [email, setEmail] = useState("");
     return (
         <div>
             <form>
