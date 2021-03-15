@@ -6,9 +6,16 @@ import {authService} from 'fbase';
 function App() {
   const [init, setInit] = useState(false);
   console.log(authService.currentUser);
-  const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    
+    authService.onAuthStateChanged((user) => {
+      if(user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+      setInit(true);
+    });
   }, []);
   // console.log(authService.currentUser)
   // setInterval(() => {
@@ -16,7 +23,7 @@ function App() {
   // }, 2000);
   return (
     <>
-      <AppRouter isLoggedIn={isLoggedIn}/>
+      {init ? <AppRouter isLoggedIn={isLoggedIn}/> : "Initializing..."}
       <footer>&copy; { new Date().getFullYear() } Nwitter </footer>
     </>
   )
