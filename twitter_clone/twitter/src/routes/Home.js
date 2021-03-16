@@ -1,11 +1,13 @@
 import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
+import Nweet from 'components/Nweet';
 
 const Home = ({userObj}) => {
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     const getNNweets = async() => {
         const dbNweets = await dbService.collection("nweets").get();
+        // 이 부분이 realTime
         dbNweets.forEach((document) => {
             const nweetObject = {
                 ...document.data(),
@@ -41,10 +43,8 @@ const Home = ({userObj}) => {
                 <input type="submit" value="Nweet" />
             </form>
             <div>
-                {nweets.map(nweet => (
-                    <div key={nweet.id}>
-                        <h1>{nweet.text}</h1>
-                    </div>
+                {nweets.map((nweet) => (
+                    <Nweet key={nweet.id} nweetObj={nweet} isOwner={nweet.creatorId === userObj.uid}/>
                 ))}
             </div>
         </div>
