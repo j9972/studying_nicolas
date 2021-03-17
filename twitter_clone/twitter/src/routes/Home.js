@@ -1,4 +1,5 @@
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
+import {v4 as uuidv4} from "uuid";
 import React, { useEffect, useState } from "react";
 import Nweet from 'components/Nweet';
 
@@ -6,7 +7,7 @@ const Home = ({userObj}) => {
     const [nweet, setNweet] = useState("");
     const [nweets, setNweets] = useState([]);
     const [attachment, setAttachment] = useState();
-    const getNNweets = async() => {
+    const getNNweets = async() => {   
         const dbNweets = await dbService.collection("nweets").get();
         // 이 부분이 realTime
         dbNweets.forEach((document) => {
@@ -26,12 +27,16 @@ const Home = ({userObj}) => {
     }, []);
     const onSubmit = async (event) => {
         event.preventDefault();
-        await dbService.collection("nweets").add({
-            text:nweet, // state의 nweet랑 같은 거니까 이렇게 둬도 된다
-            createdAt: Date.now(),
-            creatorId: userObj.uid,
-        });
-        setNweet("");
+        // collection이랑 ref.child랑 비슷
+        const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
+        const response = await fileRef.putString(attachment, "data_url");
+        console.log(response);
+        // await dbService.collection("nweets").add({
+        //     text:nweet, // state의 nweet랑 같은 거니까 이렇게 둬도 된다
+        //     createdAt: Date.now(),
+        //     creatorId: userObj.uid,
+        // });
+        // setNweet("");
     };
     const onChange = (event) => {
         const {target:{value}} = event;
