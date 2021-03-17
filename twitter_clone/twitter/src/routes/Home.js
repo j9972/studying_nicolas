@@ -46,14 +46,20 @@ const Home = ({userObj}) => {
             setAttachment(result);
         };
         reader.readAsDataURL(theFile);
-    }
+    };
+    const onCleaerAttachment = () => setAttachment(null);
     return (
         <div>
             <form onSubmit={onSubmit}>
                 <input value={nweet} onChange={onChange} type="text" placeholder="whats on ur mind?" maxLength={120} />
                 <input type="file" accept="image/*" onChange={onFileChange}/>
                 <input type="submit" value="Nweet" />
-                {attachment && <img src={attachment} width="50px" height="50px" />}
+                {attachment && (
+                    <div>
+                        <img src={attachment} width="50px" height="50px" />
+                        <button onClick={onCleaerAttachment}>Clear</button>
+                    </div>
+                    )}
             </form>
             <div>
                 {nweets.map((nweet) => (
