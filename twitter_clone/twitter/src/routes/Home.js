@@ -28,7 +28,7 @@ const Home = ({userObj}) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         let attachmentUrl = "";
-        // collection이랑 ref.child랑 비슷
+        // collection이랑  ref.child랑 비슷
         if(attachment !== "") {
             const attachmentRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
             const response = await attachmentRef.putString(attachment, "data_url");
