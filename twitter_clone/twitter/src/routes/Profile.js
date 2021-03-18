@@ -10,7 +10,7 @@ export default ({userObj}) => {
     };
     useEffect(() => {
         const getMyNweets = async() => {
-            const nweets = await dbService.collection("nweets").where("creatorId", "==", userObj.uid);
+            const nweets = await dbService.collection("nweets").where("creatorId", "==", userObj.uid).orderBy("createdAt").get();
             console.log(nweets.docs.map(doc => doc.data()));
         }
     })
