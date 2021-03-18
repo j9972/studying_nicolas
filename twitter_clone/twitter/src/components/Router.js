@@ -9,7 +9,7 @@ const AppRouter = ({isLoggedIn , userObj }) => {
     // useState의 값이 false면 auth고 true면 home page가 나타나게 된다
     return (
         <Router>
-            {isLoggedIn && <Navigation />}
+            {isLoggedIn && <Navigation userObj={userObj}/>}
             <Switch>
                 {isLoggedIn ? (
                     <>
