@@ -13,6 +13,7 @@ const Nweet = ({nweetObj, isOwner}) => {
             //delete ( user 지우는 방법 )
             await dbService.doc(`nweets/${nweetObj.id}`).delete();
             // refFromUrl함수로 delete할수도 있다.
+            // reference는 진짜 중요하다
             await storageService.refFromURL(nweetObj.attachmentUrl).delete();
         }
     };
