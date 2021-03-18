@@ -5,7 +5,7 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-const AppRouter = ({isLoggedIn , userObj }) => {
+const AppRouter = ({refreshUser , isLoggedIn , userObj }) => {
     // useState의 값이 false면 auth고 true면 home page가 나타나게 된다
     return (
         <Router>
@@ -17,7 +17,7 @@ const AppRouter = ({isLoggedIn , userObj }) => {
                         <Home userObj={userObj}/>
                     </Route>
                     <Route exact path="/profile">
-                        <Profile userObj={userObj}/>
+                        <Profile userObj={userObj} refreshUser={refreshUser}/>
                     </Route>
                     <Redirect from="*" to="/" />
                     </> 
