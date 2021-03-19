@@ -19,6 +19,8 @@ function App() {
         });
       } else {
         setIsLoggedIn(false);
+        // for logging out
+        setUserObj(null); 
       }
       setInit(true);
     });
