@@ -5,20 +5,16 @@ import {authService} from 'fbase';
 //user가 있는지 확인하는 코드 authService.currentUser
 function App() {
   const [init, setInit] = useState(false);
-  console.log(authService.currentUser);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(null);
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if(user) {
-        setIsLoggedIn(true);
         setUserObj({
           displayName: user.displayName,
           uid: user.uid,
           updateProfile: (args) => user.updateProfile(args),
         });
       } else {
-        setIsLoggedIn(false);
         // for logging out
         setUserObj(null); 
       }
@@ -36,7 +32,7 @@ function App() {
   }
   return (
     <>
-      {init ? (<AppRouter refreshUser={refreshUser} isLoggedIn={isLoggedIn} userObj={userObj} />) : ("Initializing...")}
+      {init ? (<AppRouter refreshUser={refreshUser} isLoggedIn={Boolean(userObj)} userObj={userObj} />) : ("Initializing...")}
     </>
   )
 }
