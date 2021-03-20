@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/css/main.e1182eb8.chunk.css",
-    "main.js": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/main.913ee7f4.chunk.js",
-    "main.js.map": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/main.913ee7f4.chunk.js.map",
-    "runtime-main.js": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/runtime-main.5d9503b1.js",
-    "runtime-main.js.map": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/runtime-main.5d9503b1.js.map",
-    "static/js/2.7a685f1a.chunk.js": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/2.7a685f1a.chunk.js",
-    "static/js/2.7a685f1a.chunk.js.map": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/2.7a685f1a.chunk.js.map",
-    "index.html": "/studying_nicolas/tree/master/react-movie-app/movie_app/index.html",
-    "static/css/main.e1182eb8.chunk.css.map": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/css/main.e1182eb8.chunk.css.map",
-    "static/js/2.7a685f1a.chunk.js.LICENSE.txt": "/studying_nicolas/tree/master/react-movie-app/movie_app/static/js/2.7a685f1a.chunk.js.LICENSE.txt"
+    "main.css": "/studying_nicolas/static/css/main.f6d6bb4f.chunk.css",
+    "main.js": "/studying_nicolas/static/js/main.dc7114a2.chunk.js",
+    "main.js.map": "/studying_nicolas/static/js/main.dc7114a2.chunk.js.map",
+    "runtime-main.js": "/studying_nicolas/static/js/runtime-main.43cbbfa3.js",
+    "runtime-main.js.map": "/studying_nicolas/static/js/runtime-main.43cbbfa3.js.map",
+    "static/js/2.1d8b8777.chunk.js": "/studying_nicolas/static/js/2.1d8b8777.chunk.js",
+    "static/js/2.1d8b8777.chunk.js.map": "/studying_nicolas/static/js/2.1d8b8777.chunk.js.map",
+    "index.html": "/studying_nicolas/index.html",
+    "static/css/main.f6d6bb4f.chunk.css.map": "/studying_nicolas/static/css/main.f6d6bb4f.chunk.css.map",
+    "static/js/2.1d8b8777.chunk.js.LICENSE.txt": "/studying_nicolas/static/js/2.1d8b8777.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5d9503b1.js",
-    "static/js/2.7a685f1a.chunk.js",
-    "static/css/main.e1182eb8.chunk.css",
-    "static/js/main.913ee7f4.chunk.js"
+    "static/js/runtime-main.43cbbfa3.js",
+    "static/js/2.1d8b8777.chunk.js",
+    "static/css/main.f6d6bb4f.chunk.css",
+    "static/js/main.dc7114a2.chunk.js"
   ]
 }
